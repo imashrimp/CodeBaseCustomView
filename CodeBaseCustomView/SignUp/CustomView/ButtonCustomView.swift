@@ -23,7 +23,7 @@ class ButtonCustomView: UIButton {
         setTitle("회원가입", for: .normal)
         setTitleColor(.black, for: .normal)
         setTitle("회원가입", for: .highlighted)
-        setTitleColor(.darkGray, for: .highlighted)
+        setTitleColor(.lightGray, for: .highlighted)
         titleLabel?.font = .systemFont(ofSize: 20)
         layer.cornerRadius = 6
     }

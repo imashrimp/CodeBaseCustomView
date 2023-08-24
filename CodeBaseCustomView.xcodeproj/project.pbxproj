@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1718868D2A97B36C008D7F47 /* CategoryCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */; };
 		17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CA2A9773DE00265007 /* AppDelegate.swift */; };
 		17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CC2A9773DE00265007 /* SceneDelegate.swift */; };
 		17C402CF2A9773DE00265007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CE2A9773DE00265007 /* ViewController.swift */; };
@@ -18,9 +19,14 @@
 		17C402E82A977B9400265007 /* ButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E72A977B9400265007 /* ButtonCustomView.swift */; };
 		17C402EA2A9780AA00265007 /* AdditionalInfoLabelCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E92A9780AA00265007 /* AdditionalInfoLabelCustomView.swift */; };
 		17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */; };
+		17C402F02A9785FD00265007 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402EF2A9785FD00265007 /* Transition+Extension.swift */; };
+		17C402F42A9786AC00265007 /* TransitionStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402F32A9786AC00265007 /* TransitionStyle.swift */; };
+		17C402F62A97885100265007 /* ShimFlixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402F52A97885100265007 /* ShimFlixViewController.swift */; };
+		17C402FA2A978A1300265007 /* BackgroundPosterCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCustomButton.swift; sourceTree = "<group>"; };
 		17C402C72A9773DE00265007 /* CodeBaseCustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBaseCustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C402CA2A9773DE00265007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C402CC2A9773DE00265007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +39,10 @@
 		17C402E72A977B9400265007 /* ButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomView.swift; sourceTree = "<group>"; };
 		17C402E92A9780AA00265007 /* AdditionalInfoLabelCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoLabelCustomView.swift; sourceTree = "<group>"; };
 		17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonCustomView.swift; sourceTree = "<group>"; };
+		17C402EF2A9785FD00265007 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
+		17C402F32A9786AC00265007 /* TransitionStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionStyle.swift; sourceTree = "<group>"; };
+		17C402F52A97885100265007 /* ShimFlixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimFlixViewController.swift; sourceTree = "<group>"; };
+		17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundPosterCustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,8 @@
 				17C402D32A9773DF00265007 /* Assets.xcassets */,
 				17C402D52A9773E000265007 /* LaunchScreen.storyboard */,
 				17C402D82A9773E000265007 /* Info.plist */,
+				17C402F72A97885700265007 /* Transition */,
+				17C402F82A9789DC00265007 /* SHIMFLIX */,
 			);
 			path = CodeBaseCustomView;
 			sourceTree = "<group>";
@@ -95,6 +107,25 @@
 				17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		17C402F72A97885700265007 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				17C402EF2A9785FD00265007 /* Transition+Extension.swift */,
+				17C402F32A9786AC00265007 /* TransitionStyle.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		17C402F82A9789DC00265007 /* SHIMFLIX */ = {
+			isa = PBXGroup;
+			children = (
+				17C402F52A97885100265007 /* ShimFlixViewController.swift */,
+				17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */,
+				1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */,
+			);
+			path = SHIMFLIX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +207,15 @@
 				17C402EA2A9780AA00265007 /* AdditionalInfoLabelCustomView.swift in Sources */,
 				17C402CF2A9773DE00265007 /* ViewController.swift in Sources */,
 				17C402DF2A97755700265007 /* ShimFlixCustomView.swift in Sources */,
+				17C402F02A9785FD00265007 /* Transition+Extension.swift in Sources */,
+				1718868D2A97B36C008D7F47 /* CategoryCustomButton.swift in Sources */,
 				17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */,
 				17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */,
 				17C402E82A977B9400265007 /* ButtonCustomView.swift in Sources */,
 				17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */,
+				17C402FA2A978A1300265007 /* BackgroundPosterCustomView.swift in Sources */,
+				17C402F62A97885100265007 /* ShimFlixViewController.swift in Sources */,
+				17C402F42A9786AC00265007 /* TransitionStyle.swift in Sources */,
 				17C402E62A97772D00265007 /* TextFieldCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

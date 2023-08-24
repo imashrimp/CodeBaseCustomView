@@ -58,10 +58,16 @@ class ViewController: UIViewController {
         view.addSubview(signUpButton)
         view.addSubview(addtionalInfoLabel)
         view.addSubview(switchButton)
+        signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         configureTextField()
         makeConstraints()
     }
 
+    @objc func signUpButtonTapped() {
+        let vc = ShimFlixViewController()
+        
+        transition(vc: vc, transitionStyle: .presentFullNavigation)
+    }
 
 }
 
