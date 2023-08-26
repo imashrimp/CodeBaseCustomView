@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class RandomMoviePosterCollectionViewCell: UICollectionViewCell {
 
@@ -14,11 +15,17 @@ class RandomMoviePosterCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentView.addSubview(randomMoviePoster)
-        
+        makeConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func makeConstraints() {
+        randomMoviePoster.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
 }

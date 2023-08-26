@@ -56,11 +56,11 @@ class ShimFlixViewController: UIViewController {
     
     let infoButton = InfoButtonCustomView()
     
-    let randomMoviePoster = RandomImageCustomView(frame: .zero)
+//    let randomMoviePoster = RandomImageCustomView(frame: .zero)
     
     //MARK: - 이것도 lazy var로 선언해서 해보자
     lazy var randomMoviePosterColletionView = {
-       let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout())
+        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout())
         view.delegate = self
         view.dataSource = self
         view.register(RandomMoviePosterCollectionViewCell.self, forCellWithReuseIdentifier: "RandomMoviePosterCollectionViewCell")
@@ -73,9 +73,6 @@ class ShimFlixViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         
-//        configureCollectionView()
-//        collectionViewFlowLayout()
-                
         view.addSubview(backgroundPosterImageView)
         backgroundPosterImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
@@ -141,19 +138,19 @@ class ShimFlixViewController: UIViewController {
             make.leading.equalTo(playButton.snp.trailing).offset(38)
         }
         
-        view.addSubview(randomMoviePoster)
-        //        randomMoviePoster.image =
-        randomMoviePoster.snp.makeConstraints { make in
-            make.size.equalTo(150)
-            make.center.equalToSuperview()
-        }
+//        view.addSubview(randomMoviePoster)
+//        //        randomMoviePoster.image =
+//        randomMoviePoster.snp.makeConstraints { make in
+//            make.size.equalTo(150)
+//            make.center.equalToSuperview()
+//        }
         
-                view.addSubview(randomMoviePosterColletionView)
-                randomMoviePosterColletionView.snp.makeConstraints { make in
-                    make.horizontalEdges.equalToSuperview()
-                    make.top.equalTo(playButton.snp.bottom).offset(8)
-                    make.bottom.equalTo(view.safeAreaLayoutGuide)
-                }
+        view.addSubview(randomMoviePosterColletionView)
+        randomMoviePosterColletionView.snp.makeConstraints { make in
+            make.horizontalEdges.equalToSuperview()
+            make.top.equalTo(playButton.snp.bottom).offset(8)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
         
     }
     
@@ -161,13 +158,6 @@ class ShimFlixViewController: UIViewController {
         print("스크린 리프레쉬")
     }
     
-    func configureCollectionView() {
-        
-
-
-    }
-    
- 
     func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
         let layout = UICollectionViewFlowLayout()
         let width = UIScreen.main.bounds.width / 3.2
@@ -185,21 +175,21 @@ class ShimFlixViewController: UIViewController {
 }
 
 extension ShimFlixViewController: UICollectionViewDelegate {
-
+    
 }
 
 extension ShimFlixViewController: UICollectionViewDataSource {
-
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomMoviePosterCollectionViewCell", for: indexPath)
         //MARK: - 플로우 레이아웃 잡아야함.
         return cell
     }
-
-
+    
+    
 }
