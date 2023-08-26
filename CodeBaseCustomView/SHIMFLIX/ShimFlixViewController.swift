@@ -58,12 +58,22 @@ class ShimFlixViewController: UIViewController {
     
 //    let randomMoviePoster = RandomImageCustomView(frame: .zero)
     
+    let previewLabel = {
+       let label = UILabel()
+        label.backgroundColor = .clear
+        label.text = "미리보기"
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 20)
+        return label
+    }()
+    
     //MARK: - 이것도 lazy var로 선언해서 해보자
     lazy var randomMoviePosterColletionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout())
         view.delegate = self
         view.dataSource = self
         view.register(RandomMoviePosterCollectionViewCell.self, forCellWithReuseIdentifier: "RandomMoviePosterCollectionViewCell")
+//        view.register(PreviewCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "PreviewCollectionReusableView")
         view.backgroundColor = .clear
         return view
     }()
@@ -138,17 +148,16 @@ class ShimFlixViewController: UIViewController {
             make.leading.equalTo(playButton.snp.trailing).offset(38)
         }
         
-//        view.addSubview(randomMoviePoster)
-//        //        randomMoviePoster.image =
-//        randomMoviePoster.snp.makeConstraints { make in
-//            make.size.equalTo(150)
-//            make.center.equalToSuperview()
-//        }
+        view.addSubview(previewLabel)
+        previewLabel.snp.makeConstraints { make in
+            make.top.equalTo(favoriteContentButton.snp.bottom).offset(8)
+            make.leading.equalToSuperview().offset(4)
+        }
         
         view.addSubview(randomMoviePosterColletionView)
         randomMoviePosterColletionView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
-            make.top.equalTo(playButton.snp.bottom).offset(8)
+            make.top.equalTo(previewLabel.snp.bottom).offset(8)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
@@ -169,6 +178,7 @@ class ShimFlixViewController: UIViewController {
         layout.scrollDirection = .horizontal
         
         //MARK: - 리유저블뷰로 섹션헤더 크기 잡기
+//        layout.headerReferenceSize = CGSize(width: <#T##Double#>, height: <#T##Double#>)
         
         return layout
     }
@@ -179,6 +189,16 @@ extension ShimFlixViewController: UICollectionViewDelegate {
 }
 
 extension ShimFlixViewController: UICollectionViewDataSource {
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//
+//        if kind == UICollectionView.elementKindSectionHeader {
+//            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "UICollectionReusableView", for: indexPath) as? PreviewCollectionReusableView else { return UICollectionReusableView() }
+//            return view
+//        } else {
+//            fatalError()
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
