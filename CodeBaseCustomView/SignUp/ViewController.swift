@@ -45,7 +45,7 @@ class ViewController: UIViewController {
     
     let addtionalInfoLabel = AdditionalInfoLabel()
     
-    let signUpButton = ButtonCustomView()
+    let signUpButton = SignUPButtonCustomView()
     
     let switchButton = SwitchButton()
 

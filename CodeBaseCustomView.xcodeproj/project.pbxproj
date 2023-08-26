@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1718868D2A97B36C008D7F47 /* CategoryCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */; };
+		1718868F2A97B72F008D7F47 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718868E2A97B72F008D7F47 /* CustomButton.swift */; };
+		17499DE12A98FCEE00936051 /* PlayButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */; };
+		17499DE32A99059300936051 /* InfoButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE22A99059300936051 /* InfoButtonCustomView.swift */; };
 		17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CA2A9773DE00265007 /* AppDelegate.swift */; };
 		17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CC2A9773DE00265007 /* SceneDelegate.swift */; };
 		17C402CF2A9773DE00265007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CE2A9773DE00265007 /* ViewController.swift */; };
@@ -16,7 +19,7 @@
 		17C402DF2A97755700265007 /* ShimFlixCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402DE2A97755700265007 /* ShimFlixCustomView.swift */; };
 		17C402E22A97762B00265007 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 17C402E12A97762B00265007 /* SnapKit */; };
 		17C402E62A97772D00265007 /* TextFieldCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E52A97772D00265007 /* TextFieldCustomView.swift */; };
-		17C402E82A977B9400265007 /* ButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E72A977B9400265007 /* ButtonCustomView.swift */; };
+		17C402E82A977B9400265007 /* SignUPButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E72A977B9400265007 /* SignUPButtonCustomView.swift */; };
 		17C402EA2A9780AA00265007 /* AdditionalInfoLabelCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402E92A9780AA00265007 /* AdditionalInfoLabelCustomView.swift */; };
 		17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */; };
 		17C402F02A9785FD00265007 /* Transition+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402EF2A9785FD00265007 /* Transition+Extension.swift */; };
@@ -27,6 +30,9 @@
 
 /* Begin PBXFileReference section */
 		1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCustomButton.swift; sourceTree = "<group>"; };
+		1718868E2A97B72F008D7F47 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonCustomView.swift; sourceTree = "<group>"; };
+		17499DE22A99059300936051 /* InfoButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonCustomView.swift; sourceTree = "<group>"; };
 		17C402C72A9773DE00265007 /* CodeBaseCustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBaseCustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C402CA2A9773DE00265007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C402CC2A9773DE00265007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +42,7 @@
 		17C402D82A9773E000265007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17C402DE2A97755700265007 /* ShimFlixCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShimFlixCustomView.swift; sourceTree = "<group>"; };
 		17C402E52A97772D00265007 /* TextFieldCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustomView.swift; sourceTree = "<group>"; };
-		17C402E72A977B9400265007 /* ButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustomView.swift; sourceTree = "<group>"; };
+		17C402E72A977B9400265007 /* SignUPButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPButtonCustomView.swift; sourceTree = "<group>"; };
 		17C402E92A9780AA00265007 /* AdditionalInfoLabelCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalInfoLabelCustomView.swift; sourceTree = "<group>"; };
 		17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchButtonCustomView.swift; sourceTree = "<group>"; };
 		17C402EF2A9785FD00265007 /* Transition+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transition+Extension.swift"; sourceTree = "<group>"; };
@@ -102,7 +108,7 @@
 			children = (
 				17C402DE2A97755700265007 /* ShimFlixCustomView.swift */,
 				17C402E52A97772D00265007 /* TextFieldCustomView.swift */,
-				17C402E72A977B9400265007 /* ButtonCustomView.swift */,
+				17C402E72A977B9400265007 /* SignUPButtonCustomView.swift */,
 				17C402E92A9780AA00265007 /* AdditionalInfoLabelCustomView.swift */,
 				17C402EB2A9781B800265007 /* SwitchButtonCustomView.swift */,
 			);
@@ -124,6 +130,9 @@
 				17C402F52A97885100265007 /* ShimFlixViewController.swift */,
 				17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */,
 				1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */,
+				1718868E2A97B72F008D7F47 /* CustomButton.swift */,
+				17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */,
+				17499DE22A99059300936051 /* InfoButtonCustomView.swift */,
 			);
 			path = SHIMFLIX;
 			sourceTree = "<group>";
@@ -207,11 +216,14 @@
 				17C402EA2A9780AA00265007 /* AdditionalInfoLabelCustomView.swift in Sources */,
 				17C402CF2A9773DE00265007 /* ViewController.swift in Sources */,
 				17C402DF2A97755700265007 /* ShimFlixCustomView.swift in Sources */,
+				17499DE32A99059300936051 /* InfoButtonCustomView.swift in Sources */,
 				17C402F02A9785FD00265007 /* Transition+Extension.swift in Sources */,
+				1718868F2A97B72F008D7F47 /* CustomButton.swift in Sources */,
 				1718868D2A97B36C008D7F47 /* CategoryCustomButton.swift in Sources */,
 				17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */,
 				17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */,
-				17C402E82A977B9400265007 /* ButtonCustomView.swift in Sources */,
+				17499DE12A98FCEE00936051 /* PlayButtonCustomView.swift in Sources */,
+				17C402E82A977B9400265007 /* SignUPButtonCustomView.swift in Sources */,
 				17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */,
 				17C402FA2A978A1300265007 /* BackgroundPosterCustomView.swift in Sources */,
 				17C402F62A97885100265007 /* ShimFlixViewController.swift in Sources */,

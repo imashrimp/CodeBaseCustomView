@@ -49,6 +49,12 @@ class ShimFlixViewController: UIViewController {
         view.setTitle("내가 찜한 목록", for: .normal)
         return view
     }()
+    
+    let favoriteContentButton = CustomButton()
+    
+    let playButton = PlayButtonCustomView()
+    
+    let infoButton = InfoButtonCustomView()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +105,27 @@ class ShimFlixViewController: UIViewController {
             make.height.equalTo(30)
             make.width.equalTo(100)
         }
+        
+        view.addSubview(playButton)
+        playButton.snp.makeConstraints { make in
+            make.centerY.equalToSuperview().offset(160)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(80)
+            make.height.equalTo(44)
+        }
+        
+        view.addSubview(favoriteContentButton)
+        favoriteContentButton.snp.makeConstraints { make in
+            make.centerY.equalTo(playButton).offset(5)
+            make.trailing.equalTo(playButton.snp.leading).offset(-20)
+        }
+        
+        view.addSubview(infoButton)
+        infoButton.snp.makeConstraints { make in
+            make.centerY.equalTo(playButton).offset(5)
+            make.leading.equalTo(playButton.snp.trailing).offset(38)
+        }
+        
     }
     
     @objc func refreschScreen() {

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ButtonCustomView: UIButton {
+class SignUPButtonCustomView: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
