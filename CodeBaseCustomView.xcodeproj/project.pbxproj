@@ -11,6 +11,9 @@
 		1718868F2A97B72F008D7F47 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1718868E2A97B72F008D7F47 /* CustomButton.swift */; };
 		17499DE12A98FCEE00936051 /* PlayButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */; };
 		17499DE32A99059300936051 /* InfoButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE22A99059300936051 /* InfoButtonCustomView.swift */; };
+		17499DE52A998E8400936051 /* RandomImageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE42A998E8400936051 /* RandomImageCustomView.swift */; };
+		17499DE72A99946300936051 /* RandomMoviePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */; };
+		17499DE92A9995F200936051 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE82A9995F200936051 /* MovieData.swift */; };
 		17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CA2A9773DE00265007 /* AppDelegate.swift */; };
 		17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CC2A9773DE00265007 /* SceneDelegate.swift */; };
 		17C402CF2A9773DE00265007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CE2A9773DE00265007 /* ViewController.swift */; };
@@ -33,6 +36,9 @@
 		1718868E2A97B72F008D7F47 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayButtonCustomView.swift; sourceTree = "<group>"; };
 		17499DE22A99059300936051 /* InfoButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoButtonCustomView.swift; sourceTree = "<group>"; };
+		17499DE42A998E8400936051 /* RandomImageCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageCustomView.swift; sourceTree = "<group>"; };
+		17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMoviePosterCollectionViewCell.swift; sourceTree = "<group>"; };
+		17499DE82A9995F200936051 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
 		17C402C72A9773DE00265007 /* CodeBaseCustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBaseCustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C402CA2A9773DE00265007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C402CC2A9773DE00265007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +139,9 @@
 				1718868E2A97B72F008D7F47 /* CustomButton.swift */,
 				17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */,
 				17499DE22A99059300936051 /* InfoButtonCustomView.swift */,
+				17499DE42A998E8400936051 /* RandomImageCustomView.swift */,
+				17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */,
+				17499DE82A9995F200936051 /* MovieData.swift */,
 			);
 			path = SHIMFLIX;
 			sourceTree = "<group>";
@@ -222,13 +231,16 @@
 				1718868D2A97B36C008D7F47 /* CategoryCustomButton.swift in Sources */,
 				17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */,
 				17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */,
+				17499DE92A9995F200936051 /* MovieData.swift in Sources */,
 				17499DE12A98FCEE00936051 /* PlayButtonCustomView.swift in Sources */,
 				17C402E82A977B9400265007 /* SignUPButtonCustomView.swift in Sources */,
 				17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */,
 				17C402FA2A978A1300265007 /* BackgroundPosterCustomView.swift in Sources */,
 				17C402F62A97885100265007 /* ShimFlixViewController.swift in Sources */,
 				17C402F42A9786AC00265007 /* TransitionStyle.swift in Sources */,
+				17499DE72A99946300936051 /* RandomMoviePosterCollectionViewCell.swift in Sources */,
 				17C402E62A97772D00265007 /* TextFieldCustomView.swift in Sources */,
+				17499DE52A998E8400936051 /* RandomImageCustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

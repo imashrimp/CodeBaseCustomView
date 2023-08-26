@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 class ShimFlixViewController: UIViewController {
-
+    
     let backgroundPosterImageView = {
-       let imageView = UIImageView()
+        let imageView = UIImageView()
         imageView.image = UIImage(named: "어벤져스엔드게임")
         imageView.contentMode = .scaleAspectFill
         return imageView
@@ -19,13 +19,13 @@ class ShimFlixViewController: UIViewController {
     
     let gradationBackground = {
         let imageView = UIImageView()
-         imageView.image = UIImage(named: "background")
-         imageView.contentMode = .scaleAspectFill
-         return imageView
+        imageView.image = UIImage(named: "background")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
     }()
     
     let refreshButton = {
-       let button = UIButton()
+        let button = UIButton()
         button.setTitle("N", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 55, weight: .heavy)
@@ -39,13 +39,13 @@ class ShimFlixViewController: UIViewController {
     }()
     
     let movieButton = {
-       let view = CategoryCustomButton()
+        let view = CategoryCustomButton()
         view.setTitle("영화", for: .normal)
         return view
     }()
     
     let myFavoriteButton = {
-       let view = CategoryCustomButton()
+        let view = CategoryCustomButton()
         view.setTitle("내가 찜한 목록", for: .normal)
         return view
     }()
@@ -55,12 +55,27 @@ class ShimFlixViewController: UIViewController {
     let playButton = PlayButtonCustomView()
     
     let infoButton = InfoButtonCustomView()
-        
+    
+    let randomMoviePoster = RandomImageCustomView(frame: .zero)
+    
+    //MARK: - 이것도 lazy var로 선언해서 해보자
+    lazy var randomMoviePosterColletionView = {
+       let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout())
+        view.delegate = self
+        view.dataSource = self
+        view.register(RandomMoviePosterCollectionViewCell.self, forCellWithReuseIdentifier: "RandomMoviePosterCollectionViewCell")
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isHidden = true
-
+        
+//        configureCollectionView()
+//        collectionViewFlowLayout()
+                
         view.addSubview(backgroundPosterImageView)
         backgroundPosterImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
@@ -126,11 +141,65 @@ class ShimFlixViewController: UIViewController {
             make.leading.equalTo(playButton.snp.trailing).offset(38)
         }
         
+        view.addSubview(randomMoviePoster)
+        //        randomMoviePoster.image =
+        randomMoviePoster.snp.makeConstraints { make in
+            make.size.equalTo(150)
+            make.center.equalToSuperview()
+        }
+        
+                view.addSubview(randomMoviePosterColletionView)
+                randomMoviePosterColletionView.snp.makeConstraints { make in
+                    make.horizontalEdges.equalToSuperview()
+                    make.top.equalTo(playButton.snp.bottom).offset(8)
+                    make.bottom.equalTo(view.safeAreaLayoutGuide)
+                }
+        
     }
     
     @objc func refreschScreen() {
         print("스크린 리프레쉬")
     }
     
+    func configureCollectionView() {
+        
+
+
+    }
+    
+ 
+    func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width / 3.2
+        
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 0, right: 4)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        layout.scrollDirection = .horizontal
+        
+        //MARK: - 리유저블뷰로 섹션헤더 크기 잡기
+        
+        return layout
+    }
+}
+
+extension ShimFlixViewController: UICollectionViewDelegate {
+
+}
+
+extension ShimFlixViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomMoviePosterCollectionViewCell", for: indexPath)
+        //MARK: - 플로우 레이아웃 잡아야함.
+        return cell
+    }
+
 
 }
