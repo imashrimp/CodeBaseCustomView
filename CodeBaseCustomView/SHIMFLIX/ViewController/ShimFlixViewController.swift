@@ -11,17 +11,15 @@ import SnapKit
 class ShimFlixViewController: UIViewController {
     
     let backgroundPosterImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "어벤져스엔드게임")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+        let view = BackgroundPoster(frame: .zero)
+        view.image = UIImage(named: "어벤져스엔드게임")
+        return view
     }()
     
     let gradationBackground = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "background")
-        imageView.contentMode = .scaleAspectFill
-        return imageView
+        let view = BackgroundPoster(frame: .zero)
+        view.image = UIImage(named: "background")
+        return view
     }()
     
     let refreshButton = {
@@ -33,20 +31,17 @@ class ShimFlixViewController: UIViewController {
     }()
     
     let tvSeriesButton = {
-        let view = CategoryCustomButton()
-        view.setTitle("TV 프로그램", for: .normal)
+        let view = CategoryCustomButton(title: "TV 프로그램")
         return view
     }()
     
     let movieButton = {
-        let view = CategoryCustomButton()
-        view.setTitle("영화", for: .normal)
+        let view = CategoryCustomButton(title: "영화")
         return view
     }()
     
     let myFavoriteButton = {
-        let view = CategoryCustomButton()
-        view.setTitle("내가 찜한 목록", for: .normal)
+        let view = CategoryCustomButton(title: "내가 찜한 목록")
         return view
     }()
     
@@ -56,10 +51,8 @@ class ShimFlixViewController: UIViewController {
     
     let infoButton = InfoButtonCustomView()
     
-//    let randomMoviePoster = RandomImageCustomView(frame: .zero)
-    
     let previewLabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.backgroundColor = .clear
         label.text = "미리보기"
         label.textColor = .white
@@ -73,7 +66,6 @@ class ShimFlixViewController: UIViewController {
         view.delegate = self
         view.dataSource = self
         view.register(RandomMoviePosterCollectionViewCell.self, forCellWithReuseIdentifier: "RandomMoviePosterCollectionViewCell")
-//        view.register(PreviewCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "PreviewCollectionReusableView")
         view.backgroundColor = .clear
         return view
     }()
@@ -83,27 +75,44 @@ class ShimFlixViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         
-        view.addSubview(backgroundPosterImageView)
+        [
+            backgroundPosterImageView,
+            gradationBackground,
+            refreshButton,
+            tvSeriesButton,
+            movieButton,
+            myFavoriteButton,
+            playButton,
+            favoriteContentButton,
+            infoButton,
+            previewLabel,
+            randomMoviePosterColletionView
+        ].forEach {
+            view.addSubview($0)
+        }
+        
+        makeConstraints()
+        
+        refreshButton.addTarget(self, action: #selector(refreschScreen), for: .touchUpInside)
+    }
+    
+    func makeConstraints() {
         backgroundPosterImageView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalToSuperview()
             make.bottom.equalToSuperview().inset(100)
         }
         
-        view.addSubview(gradationBackground)
         gradationBackground.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
         
-        view.addSubview(refreshButton)
-        refreshButton.addTarget(self, action: #selector(refreschScreen), for: .touchUpInside)
         refreshButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(30)
             make.leading.equalToSuperview().offset(8)
             make.size.equalTo(60)
         }
         
-        view.addSubview(tvSeriesButton)
         tvSeriesButton.snp.makeConstraints { make in
             make.centerY.equalTo(refreshButton)
             make.leading.equalTo(refreshButton.snp.trailing).offset(20)
@@ -111,7 +120,6 @@ class ShimFlixViewController: UIViewController {
             make.width.equalTo(100)
         }
         
-        view.addSubview(movieButton)
         movieButton.snp.makeConstraints { make in
             make.centerY.equalTo(refreshButton)
             make.leading.equalTo(tvSeriesButton.snp.trailing).offset(12)
@@ -119,7 +127,6 @@ class ShimFlixViewController: UIViewController {
             make.width.equalTo(60)
         }
         
-        view.addSubview(myFavoriteButton)
         myFavoriteButton.snp.makeConstraints { make in
             make.centerY.equalTo(refreshButton)
             make.leading.equalTo(movieButton.snp.trailing).offset(12)
@@ -128,7 +135,6 @@ class ShimFlixViewController: UIViewController {
             make.width.equalTo(100)
         }
         
-        view.addSubview(playButton)
         playButton.snp.makeConstraints { make in
             make.centerY.equalToSuperview().offset(160)
             make.centerX.equalToSuperview()
@@ -136,31 +142,26 @@ class ShimFlixViewController: UIViewController {
             make.height.equalTo(44)
         }
         
-        view.addSubview(favoriteContentButton)
         favoriteContentButton.snp.makeConstraints { make in
             make.centerY.equalTo(playButton).offset(5)
             make.trailing.equalTo(playButton.snp.leading).offset(-20)
         }
         
-        view.addSubview(infoButton)
         infoButton.snp.makeConstraints { make in
             make.centerY.equalTo(playButton).offset(5)
             make.leading.equalTo(playButton.snp.trailing).offset(38)
         }
         
-        view.addSubview(previewLabel)
         previewLabel.snp.makeConstraints { make in
             make.top.equalTo(favoriteContentButton.snp.bottom).offset(8)
             make.leading.equalToSuperview().offset(4)
         }
         
-        view.addSubview(randomMoviePosterColletionView)
         randomMoviePosterColletionView.snp.makeConstraints { make in
             make.horizontalEdges.equalToSuperview()
             make.top.equalTo(previewLabel.snp.bottom).offset(8)
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
-        
     }
     
     @objc func refreschScreen() {
@@ -177,9 +178,6 @@ class ShimFlixViewController: UIViewController {
         layout.minimumInteritemSpacing = 8
         layout.scrollDirection = .horizontal
         
-        //MARK: - 리유저블뷰로 섹션헤더 크기 잡기
-//        layout.headerReferenceSize = CGSize(width: <#T##Double#>, height: <#T##Double#>)
-        
         return layout
     }
 }
@@ -189,16 +187,6 @@ extension ShimFlixViewController: UICollectionViewDelegate {
 }
 
 extension ShimFlixViewController: UICollectionViewDataSource {
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//
-//        if kind == UICollectionView.elementKindSectionHeader {
-//            guard let view = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "UICollectionReusableView", for: indexPath) as? PreviewCollectionReusableView else { return UICollectionReusableView() }
-//            return view
-//        } else {
-//            fatalError()
-//        }
-//    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3

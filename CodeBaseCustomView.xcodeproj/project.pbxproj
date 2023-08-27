@@ -69,6 +69,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17499DED2A99AC7900936051 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */,
+				17499DE42A998E8400936051 /* RandomImageCustomView.swift */,
+				1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */,
+				1718868E2A97B72F008D7F47 /* CustomButton.swift */,
+				17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */,
+				17499DE22A99059300936051 /* InfoButtonCustomView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		17499DEE2A99AC8000936051 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		17499DEF2A99AC9200936051 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				17C402F52A97885100265007 /* ShimFlixViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		17499DF02A99AC9E00936051 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				17499DE82A9995F200936051 /* MovieData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		17C402BE2A9773DE00265007 = {
 			isa = PBXGroup;
 			children = (
@@ -133,15 +170,10 @@
 		17C402F82A9789DC00265007 /* SHIMFLIX */ = {
 			isa = PBXGroup;
 			children = (
-				17C402F52A97885100265007 /* ShimFlixViewController.swift */,
-				17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */,
-				1718868C2A97B36C008D7F47 /* CategoryCustomButton.swift */,
-				1718868E2A97B72F008D7F47 /* CustomButton.swift */,
-				17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */,
-				17499DE22A99059300936051 /* InfoButtonCustomView.swift */,
-				17499DE42A998E8400936051 /* RandomImageCustomView.swift */,
-				17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */,
-				17499DE82A9995F200936051 /* MovieData.swift */,
+				17499DEF2A99AC9200936051 /* ViewController */,
+				17499DED2A99AC7900936051 /* CustomView */,
+				17499DEE2A99AC8000936051 /* CollectionViewCell */,
+				17499DF02A99AC9E00936051 /* Data */,
 			);
 			path = SHIMFLIX;
 			sourceTree = "<group>";
