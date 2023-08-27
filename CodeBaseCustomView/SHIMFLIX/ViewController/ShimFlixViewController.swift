@@ -10,46 +10,34 @@ import SnapKit
 
 class ShimFlixViewController: UIViewController {
     
-    let backgroundPosterImageView = {
-        let view = BackgroundPoster(frame: .zero)
-        view.image = UIImage(named: "어벤져스엔드게임")
-        return view
-    }()
+    let backgroundPosterImageView = BackgroundPoster(title: "어벤져스엔드게임")
     
-    let gradationBackground = {
-        let view = BackgroundPoster(frame: .zero)
-        view.image = UIImage(named: "background")
-        return view
-    }()
+    let gradationBackground = BackgroundPoster(title: "background")
     
-    let refreshButton = {
-        let button = UIButton()
-        button.setTitle("N", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 55, weight: .heavy)
-        return button
-    }()
+    let refreshButton = LabelOnlyCustomButton(title: "N",
+                                             fontSize: 55,
+                                             fontWeight: .heavy)
     
-    let tvSeriesButton = {
-        let view = CategoryCustomButton(title: "TV 프로그램")
-        return view
-    }()
+    //=> 이거를 리터럴 값을 안 넣고 열거형으로 처리할 수 있을 듯?
+    let tvSeriesButton = LabelOnlyCustomButton(title: "TV 프로그램",
+                                              fontSize: 15,
+                                              fontWeight: .bold)
     
-    let movieButton = {
-        let view = CategoryCustomButton(title: "영화")
-        return view
-    }()
+    let movieButton = LabelOnlyCustomButton(title: "영화",
+                                           fontSize: 15,
+                                           fontWeight: .bold)
     
-    let myFavoriteButton = {
-        let view = CategoryCustomButton(title: "내가 찜한 목록")
-        return view
-    }()
+    let favoriteListButton = LabelOnlyCustomButton(title: "내가 찜한 목록",
+                                                  fontSize: 15,
+                                                  fontWeight: .bold)
     
-    let favoriteContentButton = CustomButton()
+    let favoriteContentButton = ImageAndLabelButtonCustomView(image: "checkmark",
+                                                              title: "내가 찜한 컨텐츠")
     
     let playButton = PlayButtonCustomView()
     
-    let infoButton = InfoButtonCustomView()
+    let infoButton = ImageAndLabelButtonCustomView(image: "info.circle",
+                                                   title: "정보")
     
     let previewLabel = {
         let label = UILabel()
@@ -81,7 +69,7 @@ class ShimFlixViewController: UIViewController {
             refreshButton,
             tvSeriesButton,
             movieButton,
-            myFavoriteButton,
+            favoriteListButton,
             playButton,
             favoriteContentButton,
             infoButton,
@@ -95,6 +83,40 @@ class ShimFlixViewController: UIViewController {
         
         refreshButton.addTarget(self, action: #selector(refreschScreen), for: .touchUpInside)
     }
+    
+    func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width / 3.2
+        
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 0, right: 4)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        layout.scrollDirection = .horizontal
+        
+        return layout
+    }
+}
+
+extension ShimFlixViewController: UICollectionViewDelegate {
+    
+}
+
+extension ShimFlixViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomMoviePosterCollectionViewCell", for: indexPath)
+        //MARK: - 플로우 레이아웃 잡아야함.
+        return cell
+    }
+}
+
+extension ShimFlixViewController {
     
     func makeConstraints() {
         backgroundPosterImageView.snp.makeConstraints { make in
@@ -127,7 +149,7 @@ class ShimFlixViewController: UIViewController {
             make.width.equalTo(60)
         }
         
-        myFavoriteButton.snp.makeConstraints { make in
+        favoriteListButton.snp.makeConstraints { make in
             make.centerY.equalTo(refreshButton)
             make.leading.equalTo(movieButton.snp.trailing).offset(12)
             make.trailing.equalToSuperview().inset(8)
@@ -167,37 +189,4 @@ class ShimFlixViewController: UIViewController {
     @objc func refreschScreen() {
         print("스크린 리프레쉬")
     }
-    
-    func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
-        let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width / 3.2
-        
-        layout.itemSize = CGSize(width: width, height: width)
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 0, right: 4)
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.scrollDirection = .horizontal
-        
-        return layout
-    }
-}
-
-extension ShimFlixViewController: UICollectionViewDelegate {
-    
-}
-
-extension ShimFlixViewController: UICollectionViewDataSource {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomMoviePosterCollectionViewCell", for: indexPath)
-        //MARK: - 플로우 레이아웃 잡아야함.
-        return cell
-    }
-    
-    
 }

@@ -9,16 +9,20 @@ import UIKit
 
 class BackgroundPoster: UIImageView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
+    var title: String
+    
+    init(title: String) {
+        self.title = title
+        super.init(frame: .zero)
+        configure(title: title)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure() {
+    func configure(title: String) {
         contentMode = .scaleAspectFill
+        image = UIImage(named: title)
     }
 }
