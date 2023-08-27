@@ -39,16 +39,9 @@ class ShimFlixViewController: UIViewController {
     let infoButton = ImageAndLabelButtonCustomView(image: "info.circle",
                                                    title: "정보")
     
-    let previewLabel = {
-        let label = UILabel()
-        label.backgroundColor = .clear
-        label.text = "미리보기"
-        label.textColor = .white
-        label.font = .systemFont(ofSize: 20)
-        return label
-    }()
+    let previewLabel = LabelCustomView()
     
-    //MARK: - 이것도 lazy var로 선언해서 해보자
+    //이거 제네릭 써서 해볼까...?
     lazy var randomMoviePosterColletionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout())
         view.delegate = self
@@ -63,38 +56,13 @@ class ShimFlixViewController: UIViewController {
         
         self.navigationController?.navigationBar.isHidden = true
         
-        [
-            backgroundPosterImageView,
-            gradationBackground,
-            refreshButton,
-            tvSeriesButton,
-            movieButton,
-            favoriteListButton,
-            playButton,
-            favoriteContentButton,
-            infoButton,
-            previewLabel,
-            randomMoviePosterColletionView
-        ].forEach {
-            view.addSubview($0)
-        }
-        
+        addViews()
         makeConstraints()
-        
         refreshButton.addTarget(self, action: #selector(refreschScreen), for: .touchUpInside)
     }
     
-    func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
-        let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width / 3.2
-        
-        layout.itemSize = CGSize(width: width, height: width)
-        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 0, right: 4)
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        layout.scrollDirection = .horizontal
-        
-        return layout
+    @objc func refreschScreen() {
+        print("스크린 리프레쉬")
     }
 }
 
@@ -111,12 +79,30 @@ extension ShimFlixViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "RandomMoviePosterCollectionViewCell", for: indexPath)
-        //MARK: - 플로우 레이아웃 잡아야함.
+
         return cell
     }
 }
 
 extension ShimFlixViewController {
+    
+    func addViews() {
+        [
+            backgroundPosterImageView,
+            gradationBackground,
+            refreshButton,
+            tvSeriesButton,
+            movieButton,
+            favoriteListButton,
+            playButton,
+            favoriteContentButton,
+            infoButton,
+            previewLabel,
+            randomMoviePosterColletionView
+        ].forEach {
+            view.addSubview($0)
+        }
+    }
     
     func makeConstraints() {
         backgroundPosterImageView.snp.makeConstraints { make in
@@ -186,7 +172,17 @@ extension ShimFlixViewController {
         }
     }
     
-    @objc func refreschScreen() {
-        print("스크린 리프레쉬")
+    func collectionViewFlowLayout() -> UICollectionViewFlowLayout  {
+        let layout = UICollectionViewFlowLayout()
+        let width = UIScreen.main.bounds.width / 3.2
+        
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.sectionInset = UIEdgeInsets(top: 4, left: 4, bottom: 0, right: 4)
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        layout.scrollDirection = .horizontal
+        
+        return layout
     }
+    
 }

@@ -13,6 +13,8 @@
 		17499DE52A998E8400936051 /* RandomImageCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE42A998E8400936051 /* RandomImageCustomView.swift */; };
 		17499DE72A99946300936051 /* RandomMoviePosterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */; };
 		17499DE92A9995F200936051 /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DE82A9995F200936051 /* MovieData.swift */; };
+		17499DF42A9B15A700936051 /* LabelCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DF32A9B15A700936051 /* LabelCustomView.swift */; };
+		17499DF62A9B174E00936051 /* RandomImageCustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17499DF52A9B174E00936051 /* RandomImageCustomCollectionView.swift */; };
 		17C402CB2A9773DE00265007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CA2A9773DE00265007 /* AppDelegate.swift */; };
 		17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CC2A9773DE00265007 /* SceneDelegate.swift */; };
 		17C402CF2A9773DE00265007 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C402CE2A9773DE00265007 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		17499DE42A998E8400936051 /* RandomImageCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageCustomView.swift; sourceTree = "<group>"; };
 		17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomMoviePosterCollectionViewCell.swift; sourceTree = "<group>"; };
 		17499DE82A9995F200936051 /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
+		17499DF32A9B15A700936051 /* LabelCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCustomView.swift; sourceTree = "<group>"; };
+		17499DF52A9B174E00936051 /* RandomImageCustomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageCustomCollectionView.swift; sourceTree = "<group>"; };
 		17C402C72A9773DE00265007 /* CodeBaseCustomView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBaseCustomView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17C402CA2A9773DE00265007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		17C402CC2A9773DE00265007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,10 +75,11 @@
 			isa = PBXGroup;
 			children = (
 				17C402F92A978A1300265007 /* BackgroundPosterCustomView.swift */,
-				17499DE42A998E8400936051 /* RandomImageCustomView.swift */,
 				1718868C2A97B36C008D7F47 /* LabelOnlyCustomButton.swift */,
 				17499DE02A98FCEE00936051 /* PlayButtonCustomView.swift */,
 				17499DE22A99059300936051 /* ImageAndLabelButtonCustomView.swift */,
+				17499DF32A9B15A700936051 /* LabelCustomView.swift */,
+				17499DF52A9B174E00936051 /* RandomImageCustomCollectionView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				17499DE62A99946300936051 /* RandomMoviePosterCollectionViewCell.swift */,
+				17499DE42A998E8400936051 /* RandomImageCustomView.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -255,6 +261,7 @@
 				17C402CF2A9773DE00265007 /* ViewController.swift in Sources */,
 				17C402DF2A97755700265007 /* ShimFlixCustomView.swift in Sources */,
 				17499DE32A99059300936051 /* ImageAndLabelButtonCustomView.swift in Sources */,
+				17499DF42A9B15A700936051 /* LabelCustomView.swift in Sources */,
 				17C402F02A9785FD00265007 /* Transition+Extension.swift in Sources */,
 				1718868D2A97B36C008D7F47 /* LabelOnlyCustomButton.swift in Sources */,
 				17C402EC2A9781B800265007 /* SwitchButtonCustomView.swift in Sources */,
@@ -264,6 +271,7 @@
 				17C402E82A977B9400265007 /* SignUPButtonCustomView.swift in Sources */,
 				17C402CD2A9773DE00265007 /* SceneDelegate.swift in Sources */,
 				17C402FA2A978A1300265007 /* BackgroundPosterCustomView.swift in Sources */,
+				17499DF62A9B174E00936051 /* RandomImageCustomCollectionView.swift in Sources */,
 				17C402F62A97885100265007 /* ShimFlixViewController.swift in Sources */,
 				17C402F42A9786AC00265007 /* TransitionStyle.swift in Sources */,
 				17499DE72A99946300936051 /* RandomMoviePosterCollectionViewCell.swift in Sources */,
